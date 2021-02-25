@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor : Illia Danko <idanko@tuta.io>
+# name: begin_src template
+# key: <s
+# --
+#+BEGIN_SRC $0
+
+#+END_SRC

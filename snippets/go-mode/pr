@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor : Illia Danko <idanko@tuta.io>
+# name: Printf to stderr
+# key: pr
+# --
+fmt.Fprintf(os.Stderr, "$0\n")
