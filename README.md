@@ -1,4 +1,4 @@
-# Emacs dot files.
+# Emacs dot files
 
 ## About
 My personal settings I daily use.
