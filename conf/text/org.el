@@ -48,10 +48,10 @@ The idea stolen from https://github.com/zaeph/.emacs.d/blob/4548c34d1965f4732d5d
 (add-hook 'org-mode-hook #'id/org-mode-hook)
 
 ;;; Electric Pair Settings.
-(defun id/org-add-electric-pairs ()
+(defun id/org-fixup-electric-pairs ()
   (when (featurep 'elec-pair)
     ;; Disable electric-pair to insert match of <.
     (setq-local electric-pair-inhibit-predicate
                 `(lambda (c) (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
 
-(add-hook 'org-mode-hook #'id/org-add-electric-pairs)
+(add-hook 'org-mode-hook #'id/org-fixup-electric-pairs)
