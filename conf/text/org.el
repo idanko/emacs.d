@@ -50,11 +50,6 @@ The idea stolen from https://github.com/zaeph/.emacs.d/blob/4548c34d1965f4732d5d
 ;;; Electric Pair Settings.
 (defun id/org-add-electric-pairs ()
   (when (featurep 'elec-pair)
-    (defvar id/org-electric-pairs '((?\* . ?\*) (?/ . ?/) (?= . ?=)
-                                    (?\_ . ?\_) (?~ . ?~) (?+ . ?+)) "Electric pairs for org-mode.")
-    (setq-local electric-pair-pairs (append electric-pair-pairs id/org-electric-pairs))
-    (setq-local electric-pair-text-pairs electric-pair-pairs)
-
     ;; Disable electric-pair to insert match of <.
     (setq-local electric-pair-inhibit-predicate
                 `(lambda (c) (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
