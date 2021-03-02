@@ -4,10 +4,10 @@
 My personal settings I daily use.
 
 Emacs is a highly extensible editor, and it might either help you solve problems
-in a fast, agile way or waste your time by hacking elisp code all night long. I
-found sticking to the bare minimal vanilla configuration and rely on the rich
-built-in system with a few external plugins (without tweaking anything too much)
-is a way of correctly use Emacs.
+in the fast, agile way or waste your time by hacking elisp code all night
+long. I found sticking to the bare minimal vanilla configuration and rely on the
+rich built-in system with a few external plugins (without tweaking anything too
+much) is the way of using Emacs correctly.
 
 ## Configuration
 - `straight.el` : package manager: easy download, change and contribute to an interesting plugin; 
