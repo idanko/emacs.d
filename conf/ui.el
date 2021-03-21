@@ -19,7 +19,28 @@
 ;; Fullscreen alist: '(fullscreen . fullboth).
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-(straight-use-package 'gruvbox-theme)
+;;; Theme.
+(defvar after-load-theme-hook nil
+  "Hook run after a color theme is loaded using `load-theme'.")
+(defadvice load-theme (after run-after-load-theme-hook activate)
+  "Run `after-load-theme-hook'."
+  (run-hooks 'after-load-theme-hook))
+
+(defun solarized-theme-fix ()
+  (custom-set-faces
+   '(mode-line ((t (:underline nil))))
+   '(mode-line-inactive ((t (:underline nil))))
+   '(ivy-current-match ((t (:underline nil))))
+   '(org-block-begin-line ((t (:underline nil))))))
+
+(add-hook 'after-load-theme-hook #'solarized-theme-fix)
+
+(straight-use-package 'solarized-theme)
+(setq
+ ;; make the modeline high contrast
+ solarized-high-contrast-mode-line t
+ ;; ;; Use less bolding
+ solarized-use-less-bold t)
 
 ;;; Frame setup.
 (defun id/make-frame-function (&optional frame)
@@ -28,7 +49,7 @@ FRAME is an optional and is required by `after-make-frame-functions'."
   (interactive)
   (when frame
     (select-frame frame))
-  (load-theme 'gruvbox-light-hard t)
+  (load-theme 'solarized-light t)
   (when (display-graphic-p)
     ;; OSX specific configuration.
     (when (string-equal system-type "darwin")
@@ -41,15 +62,9 @@ FRAME is an optional and is required by `after-make-frame-functions'."
     (when (string-equal system-type "gnu/linux")
       ;; Change font size.
       (set-face-attribute 'default nil
-                          :family "Iosevka Term" :height 110)))
-  (unless (display-graphic-p)
-    (load-theme 'gruvbox-dark-soft t)))
+                          :family "Iosevka Term" :height 110))))
 
 ;; Emacs client frame.
 (add-hook 'after-make-frame-functions #'id/make-frame-function)
 ;; Normal frame running.
 (add-hook 'after-init-hook #'id/make-frame-function)
-
-;;; Modeline.
-(straight-use-package 'mood-line)
-(mood-line-mode +1)
