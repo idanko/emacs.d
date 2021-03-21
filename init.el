@@ -21,6 +21,7 @@
 (load "~/.emacs.d/conf/tools.el")
 (load "~/.emacs.d/conf/search.el")
 (load "~/.emacs.d/conf/spell.el")
+(load "~/.emacs.d/conf/modeline.el")
 (load "~/.emacs.d/conf/lang/lang.el")
 (load "~/.emacs.d/conf/lang/go.el")
 (load "~/.emacs.d/conf/lang/lisp.el")
