@@ -14,3 +14,7 @@
 (defun id/web-mode-hook ()
   (toggle-truncate-lines +1))
 (add-hook 'web-mode-hook #'id/web-mode-hook)
+
+;;; Json mode.
+(straight-use-package 'json-mode)
+(add-hook 'json-mode-hook #'flycheck-mode)
