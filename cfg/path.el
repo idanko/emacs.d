@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/path.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/path.el -*- lexical-binding: t; -*-
 
 ;;; Find executables used by packages.
 (setq exec-path (append exec-path '("/usr/local/bin")))

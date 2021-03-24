@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/modeline.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/modeline.el -*- lexical-binding: t; -*-
 
 (defvar modeline-minor-white-list '(flycheck-mode)
   "The whitelist of the minor modes being shown on the modeline.")

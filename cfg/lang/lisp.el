@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/lang/lisp.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/lang/lisp.el -*- lexical-binding: t; -*-
 
 ;;; Settings.
 ;;; Editing.

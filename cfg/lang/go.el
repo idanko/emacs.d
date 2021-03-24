@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/lang/go.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/lang/go.el -*- lexical-binding: t; -*-
 
 ;;; Go Mode.
 (straight-use-package 'go-mode)

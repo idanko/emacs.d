@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/tools.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/tools.el -*- lexical-binding: t; -*-
 
 ;;; Xclip.
 ;; Yank to clipboard in the terminal.

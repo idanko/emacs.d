@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/vc.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/vc.el -*- lexical-binding: t; -*-
 
 ;;; Common.
 ;; Always be up-to-date.

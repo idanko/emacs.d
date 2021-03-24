@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/editor.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/editor.el -*- lexical-binding: t; -*-
 
 ;;; Expand region.
 (straight-use-package 'expand-region)

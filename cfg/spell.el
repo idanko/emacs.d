@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/spell.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/spell.el -*- lexical-binding: t; -*-
 
 ;;; Flyspell.
 (defun id/flyspell-toggle ()

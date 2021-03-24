@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/lang/sh.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/lang/sh.el -*- lexical-binding: t; -*-
 
 ;;; Flycheck integration.
 ;; Make sure that `shellcheck' is installed.

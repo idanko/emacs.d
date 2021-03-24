@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/preload.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/preload.el -*- lexical-binding: t; -*-
 
 ;; Optimize boot time by increasing GC during load.
 (setq gc-cons-threshold 402653184

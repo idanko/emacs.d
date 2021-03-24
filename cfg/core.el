@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/core.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/core.el -*- lexical-binding: t; -*-
 
 ;;; Common Packages.
 ;; Hydra.

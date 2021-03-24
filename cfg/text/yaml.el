@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/text/yaml.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/text/yaml.el -*- lexical-binding: t; -*-
 
 ;;; Settings.
 ;; Enable line highlighting.

@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/ui.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/ui.el -*- lexical-binding: t; -*-
 
 ;;; Settings.
 ;; The toolbar and menu is just a waste of valuable screen estate in a

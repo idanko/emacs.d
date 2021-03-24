@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/diff.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/diff.el -*- lexical-binding: t; -*-
 
 ;;; Common.
 

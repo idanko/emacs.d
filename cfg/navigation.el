@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/navigation.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/navigation.el -*- lexical-binding: t; -*-
 
 ;;; Dired.
 (with-eval-after-load 'dired

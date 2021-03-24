@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/lang/c.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/lang/c.el -*- lexical-binding: t; -*-
 
 ;;; Settings.
 (setq-default c-basic-offset 4)

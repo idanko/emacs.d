@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/text/org-contrib.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/text/org-contrib.el -*- lexical-binding: t; -*-
 
 ;;; Org Roam.
 (straight-use-package 'org-roam)

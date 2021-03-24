@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/buffer.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/buffer.el -*- lexical-binding: t; -*-
 
 ;;; Key bindings.
 (global-set-key (kbd "C-c b i") #'revert-buffer) ; (invigorate).

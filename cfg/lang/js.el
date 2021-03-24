@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/lang/js.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/lang/js.el -*- lexical-binding: t; -*-
 
 ;;; Settings.
 (setq js-indent-level 2)

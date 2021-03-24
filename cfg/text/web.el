@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/text/web.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/text/web.el -*- lexical-binding: t; -*-
 
 ;;; Web Mode.
 (straight-use-package 'web-mode)

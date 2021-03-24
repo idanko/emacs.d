@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/text/org.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/text/org.el -*- lexical-binding: t; -*-
 
 ;;; Settings.
 

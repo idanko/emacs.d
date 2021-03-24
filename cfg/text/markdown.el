@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/text/markdown.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/text/markdown.el -*- lexical-binding: t; -*-
 
 ;;; Markdown Mode.
 (straight-use-package 'markdown-mode)

@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/completion.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/completion.el -*- lexical-binding: t; -*-
 
 ;;; LSP.
 (straight-use-package 'lsp-mode)

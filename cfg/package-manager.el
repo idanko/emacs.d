@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/package-manager.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/package-manager.el -*- lexical-binding: t; -*-
 
 ;; Init straight.el.
 (defvar bootstrap-version)

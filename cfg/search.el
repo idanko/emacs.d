@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/conf/search.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/cfg/search.el -*- lexical-binding: t; -*-
 
 ;;; Isearch.
 ;; Better search highlighting.
