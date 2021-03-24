@@ -26,9 +26,19 @@ all modes."
       company-idle-delay 0.5
       company-minimum-prefix-length 2)
 (global-company-mode +1)
+
 (with-eval-after-load 'company
-  (add-to-list 'company-backends 'company-capf) ;; add lsp
-  (add-to-list 'company-backends 'company-yasnippet) ;; add yasnippet
+  (defun id/company-backend-with-yas (backends)
+  (if (and (listp backends) (memq 'company-yasnippet backends))
+	  backends
+	(append (if (consp backends)
+		        backends
+		      (list backends))
+		    '(:with company-yasnippet))))
+
+  ;; add yasnippet to all backends
+  (setq company-backends
+        (mapcar #'id/company-backend-with-yas company-backends))
+
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
-
