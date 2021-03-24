@@ -1,5 +1,15 @@
 ;;; ~/.emacs.d/cfg/completion.el -*- lexical-binding: t; -*-
 
+;;; Snippets.
+(straight-use-package 'yasnippet)
+(yas-global-mode +1)
+
+(defun id/yasnippet-mode-hook ()
+  "Activate fundamental-hook folder snippets allowing use them in
+all modes."
+  (yas-activate-extra-mode 'fundamental-mode))
+(add-hook 'yas-minor-mode-hook #'id/yasnippet-mode-hook)
+
 ;;; LSP.
 (straight-use-package 'lsp-mode)
 (setq lsp-diagnostic-package :none)
@@ -17,6 +27,8 @@
       company-minimum-prefix-length 2)
 (global-company-mode +1)
 (with-eval-after-load 'company
-  (add-to-list 'company-backends 'company-capf)
+  (add-to-list 'company-backends 'company-capf) ;; add lsp
+  (add-to-list 'company-backends 'company-yasnippet) ;; add yasnippet
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
+
