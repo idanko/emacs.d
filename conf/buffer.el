@@ -11,3 +11,11 @@
   (find-file (concat id/cloud-directory "/scratchpad.txt")))
 
 (global-set-key (kbd "C-c b s") #'id/open-scratchpad)
+
+;;; Access buffer.
+(defun id/open-access ()
+  "Visit scratchpad file."
+  (interactive)
+  (find-file (concat id/cloud-directory "/access.gpg")))
+
+(global-set-key (kbd "C-c b a") #'id/open-access)
