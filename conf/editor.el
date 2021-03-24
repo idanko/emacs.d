@@ -2,7 +2,7 @@
 
 ;;; Expand region.
 (straight-use-package 'expand-region)
-(global-set-key [remap open-line] #'er/expand-region) ;; remapped to C-o
+(global-set-key (kbd "C-o") #'er/expand-region)
 
 ;;; Multiple Cursors.
 (straight-use-package 'multiple-cursors)
