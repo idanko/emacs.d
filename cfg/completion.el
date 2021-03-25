@@ -42,3 +42,24 @@ all modes."
 
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
+
+;;; Emmet mode.
+(straight-use-package 'emmet-mode)
+
+;;; Complete Tab.
+(defun id/complete-tab ()
+  (interactive)
+  (call-interactively
+   (cond ((<= (current-column)(current-indentation))
+          #'indent-for-tab-command)
+         ((and (bound-and-true-p yas-minor-mode)
+               (yas--templates-for-key-at-point))
+          #'yas-expand)
+         ((and (bound-and-true-p yas-minor-mode)
+               (bound-and-true-p emmet-mode))
+          #'emmet-expand-yas)
+         ((bound-and-true-p emmet-mode)
+          #'emmet-expand-line)
+         (t #'indent-for-tab-command))))
+
+(global-set-key [remap indent-for-tab-command] #'id/complete-tab)

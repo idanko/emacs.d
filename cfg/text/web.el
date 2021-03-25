@@ -12,7 +12,8 @@
 
 ;; Disable truncate lines.
 (defun id/web-mode-hook ()
-  (toggle-truncate-lines +1))
+  (toggle-truncate-lines +1)
+  (emmet-mode +1))
 (add-hook 'web-mode-hook #'id/web-mode-hook)
 
 ;;; Json mode.
