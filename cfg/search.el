@@ -26,6 +26,7 @@ pattern."
 ;; See how to use: https://www.youtube.com/watch?v=OcR-Ke2CiPo
 (straight-use-package 'rg)
 (global-set-key (kbd "C-c s r") #'rg)
+(global-set-key (kbd "C-c s !") #'wgrep-save-all-buffers)
 
 ;; Counsel interop.
 (defun id/selection-or-interactive ()
