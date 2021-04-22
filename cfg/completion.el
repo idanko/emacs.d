@@ -43,6 +43,7 @@ all modes."
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
+
 ;;; Emmet mode.
 (straight-use-package 'emmet-mode)
 
@@ -62,4 +63,4 @@ all modes."
           #'emmet-expand-line)
          (t #'indent-for-tab-command))))
 
-(global-set-key [remap indent-for-tab-command] #'id/complete-tab)
+(evil-define-key 'insert 'global-map (kbd "TAB") #'id/complete-tab)

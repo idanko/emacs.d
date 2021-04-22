@@ -4,7 +4,7 @@
 (setq js-indent-level 2)
 
 (with-eval-after-load 'js
-  (define-key js-mode-map (kbd "M-.") #'xref-find-definitions))
+  (evil-define-key 'normal js-mode-map (kbd "gd") #'xref-find-definitions))
 
 (defun id/js-mode-hook ()
   ;; Don't allow JSON files to be hooked with LSP.

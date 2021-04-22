@@ -16,15 +16,15 @@
          :unnarrowed t)))
 
 ;; Key Bindings.
-(global-set-key (kbd "C-c n \\") #'org-roam-db-build-cache)
-(global-set-key (kbd "C-c n f") #'org-roam-find-file)
-(global-set-key (kbd "C-c n g") #'org-roam-graph-show)
-(global-set-key (kbd "C-c n r") #'org-roam)
+(evil-global-set-key 'normal (kbd "<leader> n \\") #'org-roam-db-build-cache)
+(evil-global-set-key 'normal (kbd "<leader> n f") #'org-roam-find-file)
+(evil-global-set-key 'normal (kbd "<leader> n g") #'org-roam-graph-show)
+(evil-global-set-key 'normal (kbd "<leader> n r") #'org-roam)
 
 ;;; Org Drill (Flashcard Org Extension).
 (straight-use-package 'org-drill)
 (defun id/org-mode-hook-1 ()
   (unless (featurep 'org-drill)
     (require 'org-drill))
-  (define-key org-mode-map (kbd "C-c d") #'org-drill))
+  (evil-define-key 'normal org-mode-map (kbd "<localleader> c d") #'org-drill))
 (add-hook 'org-mode-hook #'id/org-mode-hook-1)

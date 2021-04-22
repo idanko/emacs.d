@@ -7,7 +7,7 @@
   (add-hook 'dired-mode-hook #'dired-hide-details-mode))
 ;; Fix the load pkg issue when open a file from CLI.
 (require 'dired)
-(global-set-key [remap dired] #'dired-jump)
+(evil-global-set-key 'normal (kbd "-") #'dired-jump)
 
 ;; Open file in Dired.
 ;; https://www.emacswiki.org/emacs/OperatingOnFilesInDired
@@ -29,4 +29,4 @@
 (projectile-mode +1)
 
 (define-key projectile-command-map "#" #'projectile-remove-known-project)
-(global-set-key (kbd "C-c p") #'projectile-command-map)
+(evil-global-set-key 'normal (kbd "<leader> p") #'projectile-command-map)

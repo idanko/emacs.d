@@ -14,11 +14,12 @@
 
 ;; Counsel.
 (straight-use-package 'counsel)
-(global-set-key (kbd "M-x") #'counsel-M-x)
-(global-set-key [remap yank-pop] #'counsel-yank-pop) ;; Binds to M-y.
-(global-set-key [remap describe-variable] #'counsel-describe-variable)
-(global-set-key [remap describe-function] #'counsel-describe-function)
-(global-set-key [remap find-file] #'counsel-find-file)
+(evil-global-set-key 'normal (kbd "<leader> :") #'counsel-M-x)
+;; TODO(idanko): implement global key map shortcut.
+;; (evil-global-set-key 'normal (kbd "<leader> h") #'help-map)
+(evil-global-set-key 'normal (kbd "<leader> h m") #'describe-bindings)
+(evil-global-set-key 'normal (kbd "<leader> h f") #'describe-function)
+(evil-global-set-key 'normal (kbd "<leader> h v") #'describe-variable)
 
 ;; Ivy.
 (straight-use-package 'ivy)
@@ -27,7 +28,6 @@
 (setq ivy-height 15)
 (setq ivy-initial-inputs-alist nil)
 (ivy-mode +1)
-(global-set-key (kbd "C-c ~") #'ivy-resume)
 
 ;; Ivy Rich.
 ;; Show brief description on ivy menu.
@@ -109,5 +109,5 @@ OPT required argument of the origin symbol."
 
 ;;; Default keybindings.
 ;; Toggle.
-(global-set-key (kbd "C-c t t") #'toggle-truncate-lines)
-(global-set-key (kbd "C-c t w") #'whitespace-mode)
+(evil-global-set-key 'normal (kbd "<localleader> t t") #'toggle-truncate-lines)
+(evil-global-set-key 'normal (kbd "<localleader> t w") #'whitespace-mode)

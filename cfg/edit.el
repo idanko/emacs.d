@@ -2,7 +2,8 @@
 
 ;;; Expand region.
 (straight-use-package 'expand-region)
-(global-set-key (kbd "C-o") #'er/expand-region)
+(evil-global-set-key 'normal (kbd "C-=") #'er/expand-region)
+(evil-global-set-key 'normal (kbd "C--") #'er/contract-region)
 
 ;;; Multiple Cursors.
 (straight-use-package 'multiple-cursors)
@@ -16,7 +17,7 @@
   ("a" mc/mark-all-like-this "mark all" :exit t)
   ("q" nil "cancel"))
 
-(global-set-key (kbd "C-c m") #'id/cursors-hydra-keymap/body)
+(evil-define-key '(normal visual) 'global-map (kbd "<leader> <SPC>") #'id/cursors-hydra-keymap/body)
 
 ;;; Electtric Pair Mode.
 (electric-pair-mode +1)

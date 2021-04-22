@@ -7,6 +7,18 @@
         c-electric-slash
         counsel-yank-pop
         downcase-region
+        evil-backward-char
+        evil-backward-word-begin
+        evil-find-char
+        evil-force-normal-state
+        evil-forward-char
+        evil-forward-word-begin
+        evil-insert
+        evil-insert-line
+        evil-next-line
+        evil-normal-state
+        evil-previous-line
+        evil-undo
         id/cursors-hydra-keymap/body
         org-delete-char
         org-end-of-line

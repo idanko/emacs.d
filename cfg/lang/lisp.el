@@ -18,9 +18,11 @@
 (add-hook 'clojure-mode-hook #'id/clojure-mode-hook)
 
 (with-eval-after-load 'clj-refactor
-  (cljr-add-keybindings-with-prefix "C-c RET"))
+  ;; TODO(idanko): fix mapping
+  (evil-global-set-key 'normal (kbd "<localleader> r") #'clj-refactor-map))
 
 ;;; Elisp.
 (defun id/emacs-lisp-mode-hook ()
-  (id/shared-lisp-mode-hook))
+  (id/shared-lisp-mode-hook)
+  (evil-global-set-key 'normal (kbd "<localleader> e e") #'eval-defun))
 (add-hook 'emacs-lisp-mode-hook #'id/emacs-lisp-mode-hook)

@@ -19,14 +19,14 @@ pattern."
 ;;; Anzu.
 (straight-use-package 'anzu)
 (global-anzu-mode +1)
-(global-set-key [remap query-replace] #'anzu-query-replace)
-(global-set-key [remap query-replace-regexp] #'anzu-query-replace-regexp)
+(evil-global-set-key 'normal (kbd "<localleader> s r") #'anzu-query-replace)
+(evil-global-set-key 'normal (kbd "<localleader> s x") #'anzu-query-replace-regexp)
 
 ;;; RG.
 ;; See how to use: https://www.youtube.com/watch?v=OcR-Ke2CiPo
 (straight-use-package 'rg)
-(global-set-key (kbd "C-c s r") #'rg)
-(global-set-key (kbd "C-c s !") #'wgrep-save-all-buffers)
+(evil-global-set-key 'normal (kbd "<localleader> s g") #'rg)
+(evil-global-set-key 'normal (kbd "<localleader> s !") #'wgrep-save-all-buffers)
 
 ;; Counsel interop.
 (defun id/selection-or-interactive ()
@@ -47,5 +47,8 @@ pattern."
   (interactive)
   (counsel-rg (id/selection-or-interactive) (file-name-directory buffer-file-name)))
 
-(global-set-key (kbd "C-c s s") #'id/counsel-project-rg)
-(global-set-key (kbd "C-c s c") #'id/counsel-rg)
+(evil-define-key '(normal visual) 'global-map (kbd "<localleader> s s") #'id/counsel-project-rg)
+(evil-define-key '(normal visual) 'global-map (kbd "<localleader> s c") #'id/counsel-rg)
+
+(with-eval-after-load 'ivy
+  (evil-global-set-key 'normal (kbd "<localleader> s i") #'ivy-resume))
