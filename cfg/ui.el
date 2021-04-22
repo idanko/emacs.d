@@ -20,27 +20,7 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;;; Theme.
-(defvar after-load-theme-hook nil
-  "Hook run after a color theme is loaded using `load-theme'.")
-(defadvice load-theme (after run-after-load-theme-hook activate)
-  "Run `after-load-theme-hook'."
-  (run-hooks 'after-load-theme-hook))
-
-(defun solarized-theme-fix ()
-  (custom-set-faces
-   '(mode-line ((t (:underline nil))))
-   '(mode-line-inactive ((t (:underline nil))))
-   '(ivy-current-match ((t (:underline nil))))
-   '(org-block-begin-line ((t (:underline nil))))))
-
-(add-hook 'after-load-theme-hook #'solarized-theme-fix)
-
-(straight-use-package 'solarized-theme)
-(setq
- ;; make the modeline high contrast
- solarized-high-contrast-mode-line t
- ;; ;; Use less bolding
- solarized-use-less-bold t)
+(straight-use-package 'doom-themes)
 
 ;;; Frame setup.
 (defun id/make-frame-function (&optional frame)
@@ -49,7 +29,7 @@ FRAME is an optional and is required by `after-make-frame-functions'."
   (interactive)
   (when frame
     (select-frame frame))
-  (load-theme 'solarized-light t)
+  (load-theme 'doom-solarized-light t)
   (when (display-graphic-p)
     ;; OSX specific configuration.
     (when (string-equal system-type "darwin")
