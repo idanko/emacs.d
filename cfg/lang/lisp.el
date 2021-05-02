@@ -24,5 +24,7 @@
 ;;; Elisp.
 (defun id/emacs-lisp-mode-hook ()
   (id/shared-lisp-mode-hook)
-  (evil-global-set-key 'normal (kbd "<localleader> e e") #'eval-defun))
+  (evil-global-set-key 'normal (kbd "<localleader> e e") #'eval-defun)
+  (evil-global-set-key 'normal (kbd "<localleader> e s") #'eval-last-sexp)
+  (evil-global-set-key 'normal (kbd "<localleader> e b") #'eval-buffer))
 (add-hook 'emacs-lisp-mode-hook #'id/emacs-lisp-mode-hook)
