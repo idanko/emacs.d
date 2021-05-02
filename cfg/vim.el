@@ -7,10 +7,6 @@
 
 (evil-set-leader '(normal visual) (kbd "SPC"))
 (evil-set-leader '(normal visual) (kbd ",") 'localleader)
-(evil-global-set-key 'normal (kbd "C-l") #'evil-window-right)
-(evil-global-set-key 'normal (kbd "C-h") #'evil-window-left)
-(evil-global-set-key 'normal (kbd "C-j") #'evil-window-up)
-(evil-global-set-key 'normal (kbd "C-k") #'evil-window-down)
 
 ;;; Custom escape sequence.
 (straight-use-package 'evil-escape)
@@ -22,6 +18,16 @@
 (straight-use-package 'evil-collection)
 (evil-collection-init)
 
-;; Vim-surround.
+;; vim-surround.
 (straight-use-package 'evil-surround)
 (global-evil-surround-mode +1)
+
+;; evil-terminal-cursor-changer.
+(unless (display-graphic-p)
+  (straight-use-package 'evil-terminal-cursor-changer)
+  (evil-terminal-cursor-changer-activate))
+
+;; tmux-pane.
+(unless (display-graphic-p)
+  (straight-use-package 'tmux-pane)
+  (tmux-pane-mode +1))
