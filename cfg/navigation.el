@@ -21,7 +21,9 @@
     (call-process cmd nil 0 nil file)))
 
 (with-eval-after-load 'dired
-  (define-key dired-mode-map "E" #'id/dired-open-file))
+  (define-key dired-mode-map "E" #'id/dired-open-file)
+  ;; override dired <SPC> with global <leader>
+  (evil-define-key 'normal dired-mode-map (kbd "<SPC>") nil))
 
 ;;; Projectile.
 (straight-use-package 'projectile)
@@ -30,3 +32,4 @@
 
 (define-key projectile-command-map "#" #'projectile-remove-known-project)
 (evil-global-set-key 'normal (kbd "<leader> p") #'projectile-command-map)
+(evil-global-set-key 'normal (kbd "<localleader> f f") #'projectile-find-file)

@@ -2,7 +2,7 @@
 
 ;;; Counsel.
 (with-eval-after-load 'counsel
-  (evil-global-set-key 'normal (kbd "<localleader> f f") #'counsel-find-file)
+  (evil-global-set-key 'normal (kbd "<localleader> f c") #'counsel-find-file)
   (evil-global-set-key 'normal (kbd "<localleader> f r") #'counsel-recentf))
 
 ;;; Scratchpad buffer.
