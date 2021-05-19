@@ -12,6 +12,10 @@
   ;; make evil-search-word look for symbol rather than word boundaries
   (setq-default evil-symbol-word-search t))
 
+;;; fix leader key issue of view-mode.
+(with-eval-after-load 'view-mode
+  (evil-define-key 'normal view-mode-map (kbd "<SPC>") nil))
+
 (evil-set-leader '(normal visual) (kbd "SPC"))
 (evil-set-leader '(normal visual) (kbd ",") 'localleader)
 
