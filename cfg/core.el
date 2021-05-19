@@ -15,11 +15,6 @@
 ;; Counsel.
 (straight-use-package 'counsel)
 (evil-global-set-key 'normal (kbd "<leader> :") #'counsel-M-x)
-;; TODO(idanko): implement global key map shortcut.
-;; (evil-global-set-key 'normal (kbd "<leader> h") #'help-map)
-(evil-global-set-key 'normal (kbd "<leader> h m") #'describe-bindings)
-(evil-global-set-key 'normal (kbd "<leader> h f") #'describe-function)
-(evil-global-set-key 'normal (kbd "<leader> h v") #'describe-variable)
 
 ;; Ivy.
 (straight-use-package 'ivy)
