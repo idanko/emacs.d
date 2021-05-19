@@ -2,8 +2,7 @@
 
 ;;; Expand region.
 (straight-use-package 'expand-region)
-(evil-global-set-key 'normal (kbd "C-=") #'er/expand-region)
-(evil-global-set-key 'normal (kbd "C--") #'er/contract-region)
+(evil-global-set-key 'normal (kbd "+") #'er/expand-region)
 
 ;;; Multiple Cursors.
 (straight-use-package 'multiple-cursors)
