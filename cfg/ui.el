@@ -69,3 +69,7 @@ FRAME is an optional and is required by `after-make-frame-functions'."
 (add-hook 'after-make-frame-functions #'id/make-frame-function)
 ;; Normal frame running.
 (add-hook 'after-init-hook #'id/make-frame-function)
+
+;;; hl-todo.
+(straight-use-package 'hl-todo)
+(global-hl-todo-mode +1)
