@@ -16,6 +16,7 @@
 (load "~/.emacs.d/cfg/checkers.el")
 (load "~/.emacs.d/cfg/completion.el")
 (load "~/.emacs.d/cfg/navigation.el")
+(load "~/.emacs.d/cfg/dired.el")
 (load "~/.emacs.d/cfg/buffer.el")
 (load "~/.emacs.d/cfg/file.el")
 (load "~/.emacs.d/cfg/vc.el")
