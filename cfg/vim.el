@@ -5,6 +5,13 @@
 (straight-use-package 'evil)
 (evil-mode +1)
 
+;;; Fix an issue with underscore.
+;;; https://emacs.stackexchange.com/questions/9583/how-to-treat-underscore-as-part-of-the-word#answer-20717
+(with-eval-after-load 'evil
+  (defalias #'forward-evil-word #'forward-evil-symbol)
+  ;; make evil-search-word look for symbol rather than word boundaries
+  (setq-default evil-symbol-word-search t))
+
 (evil-set-leader '(normal visual) (kbd "SPC"))
 (evil-set-leader '(normal visual) (kbd ",") 'localleader)
 
