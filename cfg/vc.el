@@ -13,14 +13,14 @@
 ;; Auto check spelling.
 (add-hook 'git-commit-setup-hook #'flyspell-mode)
 
-(evil-global-set-key 'normal (kbd "<localleader> g g") #'magit-status)
-(evil-global-set-key 'normal (kbd "<localleader> g b") #'magit-blame)
-(evil-global-set-key 'normal (kbd "<localleader> g l") #'magit-log-buffer-file)
+(evil-global-set-key 'normal (kbd "<leader> g g") #'magit-status)
+(evil-global-set-key 'normal (kbd "<leader> g b") #'magit-blame)
+(evil-global-set-key 'normal (kbd "<leader> g l") #'magit-log-buffer-file)
 
 ;;; Git Link.
 (straight-use-package 'git-link)
 ;; Copy path to the clipboard.
-(evil-global-set-key 'normal (kbd "<localleader> g u") #'git-link)
+(evil-global-set-key 'normal (kbd "<leader> g u") #'git-link)
 
 ;; Git gutter.
 (straight-use-package 'git-gutter)
