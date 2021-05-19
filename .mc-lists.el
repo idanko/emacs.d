@@ -9,6 +9,7 @@
         downcase-region
         evil-backward-char
         evil-backward-word-begin
+        evil-change
         evil-find-char
         evil-force-normal-state
         evil-forward-char
