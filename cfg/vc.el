@@ -25,7 +25,6 @@
 ;; Git gutter.
 (straight-use-package 'git-gutter)
 (custom-set-variables
- '(git-gutter:window-width 2)
  '(git-gutter:modified-sign "▌")
  '(git-gutter:added-sign "▌")
  '(git-gutter:deleted-sign "▌"))
