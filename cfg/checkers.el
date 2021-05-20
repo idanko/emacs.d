@@ -6,5 +6,7 @@
 (setq flycheck-indication-mode 'left-margin
       flycheck-highlighting-mode nil)
 
-(evil-global-set-key 'normal (kbd "<localleader> t e") #'flycheck-list-errors)
+(defun id/flycheck-mode-hook-global ()
+  (evil-global-set-key 'normal (kbd "<localleader> c l") #'flycheck-list-errors))
+(add-hook 'flycheck-mode-hook #'id/flycheck-mode-hook-global)
 
