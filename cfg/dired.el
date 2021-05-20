@@ -20,7 +20,8 @@
                (_ "xdg-open"))))
     (call-process cmd nil 0 nil file)))
 
-(with-eval-after-load 'dired
-  (define-key dired-mode-map "E" #'id/dired-open-file)
+(defun id/dired-mode-hook ()
   ;;; fix leader key issue of view-mode.
-  (evil-define-key 'normal dired-mode-map (kbd "<SPC>") nil))
+  (evil-define-key 'normal dired-mode-map (kbd "<SPC>") nil)
+  (evil-define-key 'normal dired-mode-map "E" #'id/dired-open-file))
+(add-hook 'dired-mode-hook #'id/dired-mode-hook)
