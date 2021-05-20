@@ -5,16 +5,16 @@
 (straight-use-package 'evil)
 (evil-mode +1)
 
-;;; Fix an issue with underscore.
-;;; https://emacs.stackexchange.com/questions/9583/how-to-treat-underscore-as-part-of-the-word#answer-20717
+;; fix an issue with underscore.
+;; https://emacs.stackexchange.com/questions/9583/how-to-treat-underscore-as-part-of-the-word#answer-20717
 (with-eval-after-load 'evil
   (defalias #'forward-evil-word #'forward-evil-symbol)
   ;; make evil-search-word look for symbol rather than word boundaries
   (setq-default evil-symbol-word-search t))
 
-;;; fix leader key issue of view-mode.
-(with-eval-after-load 'view-mode
-  (evil-define-key 'normal view-mode-map (kbd "<SPC>") nil))
+;; fix leader key issue of view-mode.
+(add-hook 'view-mode-hook
+          (evil-define-key 'normal view-mode-map (kbd "<SPC>") nil))
 
 (evil-set-leader '(normal visual) (kbd "SPC"))
 (evil-set-leader '(normal visual) (kbd ",") 'localleader)
