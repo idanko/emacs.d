@@ -23,5 +23,7 @@
 (defun id/dired-mode-hook ()
   ;;; fix leader key issue of view-mode.
   (evil-define-key 'normal dired-mode-map (kbd "<SPC>") nil)
-  (evil-define-key 'normal dired-mode-map "E" #'id/dired-open-file))
+  (evil-define-key 'normal dired-mode-map "E" #'id/dired-open-file)
+  (evil-define-key 'normal dired-mode-map "X" #'kill-this-buffer))
+
 (add-hook 'dired-mode-hook #'id/dired-mode-hook)
