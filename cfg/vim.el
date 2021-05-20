@@ -5,7 +5,7 @@
 (straight-use-package 'evil)
 (evil-mode +1)
 
-;; fix an issue with underscore.
+;; Fix an issue with underscore.
 ;; https://emacs.stackexchange.com/questions/9583/how-to-treat-underscore-as-part-of-the-word#answer-20717
 (with-eval-after-load 'evil
   (defalias #'forward-evil-word #'forward-evil-symbol)
@@ -19,7 +19,14 @@
 (evil-set-leader '(normal visual) (kbd "SPC"))
 (evil-set-leader '(normal visual) (kbd ",") 'localleader)
 
-;;; Custom escape sequence.
+;; Simulate nnoremap * g*``.
+(defun id/evil-search-word-forward (orig-fun &rest args)
+  (apply orig-fun args)
+  (let ((res (evil-search-previous)))
+    res))
+(advice-add 'evil-search-word-forward :around #'id/evil-search-word-forward)
+
+;; Custom escape sequence.
 (straight-use-package 'evil-escape)
 (evil-escape-mode +1)
 (setq-default evil-escape-delay 0.3)
