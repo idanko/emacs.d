@@ -59,8 +59,6 @@
 (line-number-mode t)
 (column-number-mode t)
 (size-indication-mode t)
-;; Cycle through the mark ring.
-(setq set-mark-command-repeat-pop t)
 ;; Stop update init.el by package-selected-packages.
 (defun package--save-selected-packages (&rest opt)
   "Override default symbol to stop update init.el.

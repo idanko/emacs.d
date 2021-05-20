@@ -4,6 +4,14 @@
 (straight-use-package 'go-mode)
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
 
+;; fix jump stack error
+;; NOTE: vim's go-to-definition binding comes from `evil-collection'
+(defun id/go-to-definition-golang (orig-fun &rest args)
+  (evil--jumps-push)
+  (let ((res (apply orig-fun args)))
+    res))
+(advice-add 'godef-jump :around #'id/go-to-definition-golang)
+
 (defun id/go-mode-hook ()
   (setq-local gofmt-command "goimports"
               fill-column 80)
