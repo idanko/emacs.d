@@ -16,7 +16,7 @@
   (setq-local gofmt-command "goimports"
               fill-column 80)
   (add-hook 'before-save-hook 'gofmt-before-save)
-  (lsp-deferred)
+  (eglot-ensure)
   ;; Sort imports by:
   ;; - stdlib
   ;; - 3rd party modules

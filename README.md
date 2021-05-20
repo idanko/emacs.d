@@ -4,10 +4,10 @@
 My personal settings I daily use.
 
 Emacs is a highly extensible editor, and it might either help you solve problems
-in the fast, agile way or waste your time by hacking elisp code all night
-long. I found sticking to the bare minimal vanilla configuration and rely on the
-rich built-in system with a few external plugins (without tweaking anything too
-much) is the way of using Emacs correctly.
+in a gentle and agile way or waste your time by hacking elisp code all night
+long with a barely tangible profit. I found sticking to the bare minimal
+configuration and rely on the rich built-in system with a few external plugins
+is the way of using Emacs correctly.
 
 ## Configuration
 - `straight.el` : package manager: easy download, change and contribute to an interesting plugin; 
@@ -23,11 +23,11 @@ much) is the way of using Emacs correctly.
 - `org-drill` : memorizing things;
 - `company` : generic completion engine;
 - `yasnippet` : code & text snippets;
-- `lsp-mode` : code completion;
+- `eglot` : code completion;
 - `flycheck` : kinda like linter;
 - `flyspell` : spell checking;
 - `Iosevka Term` font;
-- `gruvbox` color theme;
+- `solarized light` color theme;
 - Few other minor modes;
 - Some other major modes for text highlighting.
 

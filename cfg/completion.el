@@ -10,14 +10,11 @@ all modes."
   (yas-activate-extra-mode 'fundamental-mode))
 (add-hook 'yas-minor-mode-hook #'id/yasnippet-mode-hook)
 
-;;; LSP.
-(straight-use-package 'lsp-mode)
-(setq lsp-diagnostic-package :none)
-(setq lsp-diagnostics-modeline-scope nil) ;; Disable mode-line integration.
-(setq lsp-restart 'ignore) ; Suppress restart process confirmation.
-(setq lsp-enable-links nil)
-(setq lsp-enable-symbol-highlighting nil)
-(setq lsp-headerline-breadcrumb-enable nil) ; Disable LSP headerline.
+;;; lsp (eglot).
+(straight-use-package 'eglot)
+;; workaround of the error on `eglot' cmd
+(defun project-root (project)
+  (car (project-roots project)))
 
 ;;; Company.
 (straight-use-package 'company)
