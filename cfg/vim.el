@@ -46,6 +46,5 @@
   (evil-terminal-cursor-changer-activate))
 
 ;; tmux-pane.
-(unless (display-graphic-p)
-  (straight-use-package 'tmux-pane)
-  (tmux-pane-mode +1))
+(straight-use-package 'tmux-pane)
+(tmux-pane-mode +1)
