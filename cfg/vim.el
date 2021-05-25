@@ -34,6 +34,10 @@
 ;;; Goodies.
 ;; Collection.
 (straight-use-package 'evil-collection)
+;; TODO: consider to use el-patch.
+(require 'evil-collection)
+(setq evil-collection-mode-list (->> evil-collection-mode-list
+                                  (remove 'go-mode)))
 (evil-collection-init)
 
 ;; vim-surround.
