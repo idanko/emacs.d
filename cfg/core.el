@@ -90,6 +90,9 @@ OPT required argument of the origin symbol."
 ;; Revert buffers automatically when underlying files are changed
 ;; externally.
 (global-auto-revert-mode t)
+;; Show relative line numbers.
+(setq-default display-line-numbers-type 'relative)
+(global-display-line-numbers-mode t)
 ;; UTF-8 only.
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -103,4 +106,5 @@ OPT required argument of the origin symbol."
 ;;; Default keybindings.
 ;; Toggle.
 (evil-global-set-key 'normal (kbd "<localleader> t t") #'toggle-truncate-lines)
+(evil-global-set-key 'normal (kbd "<localleader> t n") #'global-display-line-numbers-mode)
 (evil-global-set-key 'normal (kbd "<localleader> t w") #'whitespace-mode)

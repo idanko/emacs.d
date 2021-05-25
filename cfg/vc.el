@@ -15,7 +15,6 @@
 
 (evil-global-set-key 'normal (kbd "<localleader> g g") #'magit-status)
 (evil-global-set-key 'normal (kbd "<localleader> g b") #'magit-blame)
-(evil-global-set-key 'normal (kbd "<localleader> g l") #'magit-log-buffer-file)
 
 ;;; Git Link.
 (straight-use-package 'git-link)
@@ -25,7 +24,17 @@
 ;; Git gutter.
 (straight-use-package 'git-gutter)
 (custom-set-variables
+ '(git-gutter:hide-gutter nil) ;; TODO(idanko) consider to shows gutter always.
  '(git-gutter:modified-sign "▌")
  '(git-gutter:added-sign "▌")
+ '(git-gutter:unchanged-sign " ")
  '(git-gutter:deleted-sign "▌"))
+
 (global-git-gutter-mode +1)
+;; solarized colors.
+(set-face-foreground 'git-gutter:modified "#b58900")
+(set-face-background 'git-gutter:unchanged "#f0e9d7")
+
+(with-eval-after-load 'git-gutter
+  (evil-global-set-key 'normal (kbd "[c") #'git-gutter:next-hunk)
+  (evil-global-set-key 'normal (kbd "]c") #'git-gutter:previous-hunk))
