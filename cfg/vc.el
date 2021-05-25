@@ -36,5 +36,5 @@
 (set-face-background 'git-gutter:unchanged "#f0e9d7")
 
 (with-eval-after-load 'git-gutter
-  (evil-global-set-key 'normal (kbd "[c") #'git-gutter:next-hunk)
-  (evil-global-set-key 'normal (kbd "]c") #'git-gutter:previous-hunk))
+  (evil-global-set-key 'normal (kbd "]c") #'git-gutter:next-hunk)
+  (evil-global-set-key 'normal (kbd "[c") #'git-gutter:previous-hunk))
