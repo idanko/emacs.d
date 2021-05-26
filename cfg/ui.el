@@ -30,7 +30,10 @@
   (custom-set-faces
    '(fringe ((t (:background "#f0e9d7"))))
    '(line-number ((t (:background "#f0e9d7"))))
-   '(line-number-current-line ((t (:background "#f0e9d7"))))))
+   '(line-number-current-line ((t (:background "#f0e9d7")))))
+  ;; https://www.reddit.com/r/emacs/comments/3u0d0u/how_do_i_make_the_vertical_window_divider_more/
+  (set-face-background 'vertical-border "#f0e9d7")
+  (set-face-foreground 'vertical-border (face-background 'vertical-border)))
 
 (add-hook 'after-load-theme-hook #'id/theme-fix)
 

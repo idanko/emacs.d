@@ -90,9 +90,8 @@ OPT required argument of the origin symbol."
 ;; Revert buffers automatically when underlying files are changed
 ;; externally.
 (global-auto-revert-mode t)
-;; Show relative line numbers.
+;; Use relative line numbers.
 (setq-default display-line-numbers-type 'relative)
-(global-display-line-numbers-mode t)
 ;; UTF-8 only.
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
