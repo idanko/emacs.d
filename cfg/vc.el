@@ -20,28 +20,3 @@
 (straight-use-package 'git-link)
 ;; Copy path to the clipboard.
 (evil-global-set-key 'normal (kbd "<localleader> g u") #'git-link)
-
-;; Git gutter.
-(straight-use-package 'git-gutter)
-(custom-set-variables
- '(git-gutter:hide-gutter nil) ;; TODO(idanko) consider to shows gutter always.
- '(git-gutter:modified-sign "▌")
- '(git-gutter:added-sign "▌")
- '(git-gutter:unchanged-sign " ")
- '(git-gutter:deleted-sign "▌")
- '(git-gutter:always-show-separator t))
-
-(global-git-gutter-mode +1)
-;; update when focused
-(add-to-list 'git-gutter:update-commands 'other-window)
-
-;; solarized colors.
-(defun id/git-gutter-fix-colors ()
-  (set-face-foreground 'git-gutter:modified "#b58900")
-  (set-face-background 'git-gutter:unchanged "#f0e9d7"))
-(add-hook 'after-load-theme-hook #'id/git-gutter-fix-colors)
-
-;; mapping.
-(with-eval-after-load 'git-gutter
-  (evil-global-set-key 'normal (kbd "]c") #'git-gutter:next-hunk)
-  (evil-global-set-key 'normal (kbd "[c") #'git-gutter:previous-hunk))
