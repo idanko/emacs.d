@@ -26,7 +26,7 @@
 (load "~/.emacs.d/cfg/search.el")
 (load "~/.emacs.d/cfg/spell.el")
 (load "~/.emacs.d/cfg/modeline.el")
-(load "~/.emacs.d/cfg/lang/lang.el")
+(load "~/.emacs.d/cfg/lang/prog.el")
 (load "~/.emacs.d/cfg/lang/go.el")
 (load "~/.emacs.d/cfg/lang/lisp.el")
 (load "~/.emacs.d/cfg/lang/js.el")

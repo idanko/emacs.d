@@ -1,4 +1,4 @@
-;;; ~/.emacs.d/lang/lang.el -*- lexical-binding: t; -*-
+;;; ~/.emacs.d/lang/prog.el -*- lexical-binding: t; -*-
 
 ;;; Rainbow delimiters.
 (straight-use-package 'rainbow-delimiters)

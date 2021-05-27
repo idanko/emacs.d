@@ -1,8 +1,8 @@
 ;;; ~/.emacs.d/cfg/text/yaml.el -*- lexical-binding: t; -*-
 
 ;;; Settings.
-;; Enable line highlighting.
-(add-hook 'yaml-mode-hook #'hl-line-mode)
+;;; Line number mode.
+(add-hook 'yaml-mode-hook #'display-line-numbers-mode)
 
 ;;; Yaml Mode.
 (straight-use-package 'yaml-mode)
