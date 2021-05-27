@@ -28,7 +28,8 @@
  '(git-gutter:modified-sign "▌")
  '(git-gutter:added-sign "▌")
  '(git-gutter:unchanged-sign " ")
- '(git-gutter:deleted-sign "▌"))
+ '(git-gutter:deleted-sign "▌")
+ '(git-gutter:always-show-separator t))
 
 (global-git-gutter-mode +1)
 ;; update when focused
