@@ -33,6 +33,7 @@
 (load "~/.emacs.d/cfg/lang/sh.el")
 (load "~/.emacs.d/cfg/lang/c.el")
 (load "~/.emacs.d/cfg/text/yaml.el")
+(load "~/.emacs.d/cfg/text/conf.el")
 (load "~/.emacs.d/cfg/text/org.el")
 (load "~/.emacs.d/cfg/text/org-contrib.el")
 (load "~/.emacs.d/cfg/text/web.el")
