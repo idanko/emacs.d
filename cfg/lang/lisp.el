@@ -2,9 +2,10 @@
 
 ;;; Settings.
 ;;; Editing.
-(straight-use-package 'paredit)
+(straight-use-package 'evil-paredit)
 
 (defun id/shared-lisp-mode-hook ()
+  (evil-paredit-mode +1)
   (setq-local fill-column 80))
 
 ;;; Clojure.
