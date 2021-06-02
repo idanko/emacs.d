@@ -2,5 +2,7 @@
 
 ;;; Xclip.
 ;; Yank to clipboard in the terminal.
-(straight-use-package 'xclip)
-(xclip-mode +1)
+(use-package xclip
+  :if (not (display-graphic-p))
+  :config
+  (xclip-mode +1))

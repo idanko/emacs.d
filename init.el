@@ -21,6 +21,7 @@
 (load "~/.emacs.d/cfg/buffer.el")
 (load "~/.emacs.d/cfg/checkers.el")
 (load "~/.emacs.d/cfg/vc.el")
+(load "~/.emacs.d/cfg/terminal.el")
 (load "~/.emacs.d/cfg/text/docker.el")
 (load "~/.emacs.d/cfg/text/markdown.el")
 (load "~/.emacs.d/cfg/text/org-contrib.el")
