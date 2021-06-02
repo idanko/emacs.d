@@ -1,24 +1,24 @@
 ;;; ~/.emacs.d/cfg/lang/lisp.el -*- lexical-binding: t; -*-
 
-;;; Settings.
-;;; Editing.
-(straight-use-package 'paredit)
-
-(defun id/shared-lisp-mode-hook ()
-  (paredit-mode +1)
-  (setq-local fill-column 80))
-
 ;;; Clojure.
-(straight-use-package 'cider)
-(straight-use-package 'clj-refactor)
+(use-package cider)
+(use-package clj-refactor
+  :after (cider)
+  :init
+  (add-hook 'clojure-mode-hook #'clj-refactor-mode))
 
 (defun id/clojure-mode-hook ()
-  (id/shared-lisp-mode-hook)
-  (clj-refactor-mode +1))
+  (id/shared-lisp-mode-hook))
 (add-hook 'clojure-mode-hook #'id/clojure-mode-hook)
 
-(with-eval-after-load 'clj-refactor
-  (cljr-add-keybindings-with-prefix "C-c RET"))
+;;; Editing.
+(use-package paredit
+  :init
+  (add-hook 'emacs-lisp-mode-hook #'paredit-mode)
+  (add-hook 'clojure-mode-hook #'paredit-mode))
+
+(defun id/shared-lisp-mode-hook ()
+  (setq-local fill-column 80))
 
 ;;; Elisp.
 (defun id/emacs-lisp-mode-hook ()

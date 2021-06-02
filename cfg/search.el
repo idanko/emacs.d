@@ -17,16 +17,20 @@ pattern."
 (advice-add 'isearch-forward :after #'id/isearch-region)
 
 ;;; Anzu.
-(straight-use-package 'anzu)
-(global-anzu-mode +1)
-(global-set-key [remap query-replace] #'anzu-query-replace)
-(global-set-key [remap query-replace-regexp] #'anzu-query-replace-regexp)
+(use-package anzu
+  :config
+  (global-anzu-mode +1)
+  (global-set-key [remap query-replace] #'anzu-query-replace)
+  (global-set-key [remap query-replace-regexp] #'anzu-query-replace-regexp))
 
 ;;; RG.
 ;; See how to use: https://www.youtube.com/watch?v=OcR-Ke2CiPo
-(straight-use-package 'rg)
-(global-set-key (kbd "C-c s r") #'rg)
-(global-set-key (kbd "C-c s !") #'wgrep-save-all-buffers)
+(use-package rg
+  :config
+  (global-set-key (kbd "C-c s r") #'rg)
+  (global-set-key (kbd "C-c s !") #'wgrep-save-all-buffers)
+  (global-set-key (kbd "C-c s s") #'id/counsel-project-rg)
+  (global-set-key (kbd "C-c s c") #'id/counsel-rg))
 
 ;; Counsel interop.
 (defun id/selection-or-interactive ()
@@ -46,6 +50,3 @@ pattern."
   "Execute counsel-ag command against the buffer's directory."
   (interactive)
   (counsel-rg (id/selection-or-interactive) (file-name-directory buffer-file-name)))
-
-(global-set-key (kbd "C-c s s") #'id/counsel-project-rg)
-(global-set-key (kbd "C-c s c") #'id/counsel-rg)

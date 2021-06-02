@@ -1,14 +1,16 @@
 ;;; ~/.emacs.d/cfg/lang/go.el -*- lexical-binding: t; -*-
 
 ;;; Go Mode.
-(straight-use-package 'go-mode)
-(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+(use-package go-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
 
 (defun id/go-mode-hook ()
   (setq-local gofmt-command "goimports"
               fill-column 80)
   (add-hook 'before-save-hook 'gofmt-before-save)
-  (lsp-deferred)
+  ;;(lsp-deferred)
+  (eglot-ensure)
   ;; Sort imports by:
   ;; - stdlib
   ;; - 3rd party modules

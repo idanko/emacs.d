@@ -1,11 +1,10 @@
 /transient
-straight/*
-!straight/versions
 recentf
-.lsp-session-v1
 .org-id-locations
 /persist
 /projectile-bookmarks.eld
 /url
 /.cache
 /smex-items
+/eln-cache
+/elpa

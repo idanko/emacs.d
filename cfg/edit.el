@@ -1,11 +1,12 @@
 ;;; ~/.emacs.d/cfg/edit.el -*- lexical-binding: t; -*-
 
 ;;; Expand region.
-(straight-use-package 'expand-region)
-(global-set-key (kbd "C-o") #'er/expand-region)
+(use-package expand-region
+  :config
+  (global-set-key (kbd "C-=") #'er/expand-region))
 
 ;;; Multiple Cursors.
-(straight-use-package 'multiple-cursors)
+(use-package multiple-cursors)
 
 (defhydra id/cursors-hydra-keymap (:color blue)
   "Multiple Cursors"
