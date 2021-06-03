@@ -24,8 +24,8 @@
 (load "~/.emacs.d/cfg/terminal.el")
 (load "~/.emacs.d/cfg/text/docker.el")
 (load "~/.emacs.d/cfg/text/markdown.el")
-(load "~/.emacs.d/cfg/text/org-contrib.el")
 (load "~/.emacs.d/cfg/text/org.el")
+(load "~/.emacs.d/cfg/text/org-contrib.el")
 (load "~/.emacs.d/cfg/text/web.el")
 (load "~/.emacs.d/cfg/text/yaml.el")
 (load "~/.emacs.d/cfg/lang/prog.el")
@@ -37,6 +37,8 @@
 
 ;; Should be added in the end due to 'diminish.
 (load "~/.emacs.d/cfg/modeline.el")
+(setq custom-file "~/.emacs.d/cfg/settings.el")
+(load custom-file)
 (load "~/.emacs.d/cfg/postload.el")
 
 ;; Compute and show Emacs warm time.

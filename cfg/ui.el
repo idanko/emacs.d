@@ -30,12 +30,6 @@
   :init
   :config
   (defun id/theme-fix ()
-    (custom-set-faces
-     '(internal-border ((t (:background "black"))))
-     '(cursor ((t (:background "#657B83"))))
-     '(mode-line ((t (:box (:line-width 1)))))
-     '(fringe ((t (:background "#f0e9d7"))))
-     '(line-number ((t (:background "#f0e9d7")))))
     (set-face-background 'vertical-border "#f0e9d7")
     (set-face-foreground 'vertical-border (face-background 'vertical-border))))
 (add-hook 'after-load-theme-hook #'id/theme-fix)
@@ -60,7 +54,7 @@ FRAME is an optional and is required by `after-make-frame-functions'."
     (when (string-equal system-type "gnu/linux")
       ;; Change font size.
       (set-face-attribute 'default nil
-                          :family "Iosevka Term" :height 110))))
+                          :family "Iosevka" :height 110))))
 
 ;; Emacs client frame.
 (add-hook 'after-make-frame-functions #'id/make-frame-function)
