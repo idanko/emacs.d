@@ -1,5 +1,16 @@
 ;;; ~/.emacs.d/cfg/settings.el -*- lexical-binding: t; -*-
 
+(custom-set-variables
+ '(org-roam-verbose nil)
+ '(org-roam-db-location (concat id/cloud-directory "/org-roam.db"))
+ '(org-roam-directory org-directory)
+ '(org-roam-capture-templates
+   '(("f" "find-file" plain (function org-roam--capture-get-point)
+      "%?"
+      :file-name "%<%Y%m%d%H%M%S>-${slug}"
+      :head "#+TITLE: ${title}\n#+CREATED: %U\n#+LAST_MODIFIED: %U\n#+ROAM_TAGS: "
+      :unnarrowed t))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
