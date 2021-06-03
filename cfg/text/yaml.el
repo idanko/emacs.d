@@ -7,6 +7,7 @@
   :after (flycheck)
   :config
   (add-hook 'yaml-mode-hook #'hl-line-mode)
+  (add-hook 'yaml-mode-hook #'display-line-numbers-mode)
   ;;; Flycheck integration.
   ;; Enable `yamllint' checker.
   ;; To install yamllint:

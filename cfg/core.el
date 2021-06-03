@@ -132,3 +132,4 @@ OPT required argument of the origin symbol."
 ;; Toggle.
 (global-set-key (kbd "C-c t t") #'toggle-truncate-lines)
 (global-set-key (kbd "C-c t w") #'whitespace-mode)
+(global-set-key (kbd "C-c t n") #'global-display-line-numbers-mode)
