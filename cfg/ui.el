@@ -30,8 +30,25 @@
   :init
   :config
   (defun id/theme-fix ()
-    (set-face-background 'vertical-border "#f0e9d7")
-    (set-face-foreground 'vertical-border (face-background 'vertical-border))))
+    (let ((face (pcase (car custom-enabled-themes)
+                  ('doom-solarized-light
+                   '((cursor-bg . "#657b83") (fringe-bg . "#f0e9d7")
+                     (internal-border-bg . "black") (line-number-bg . "#f0e9d7")
+                     (vertical-border-bg . "#f0e9d7")))
+                  ('doom-zenburn
+                   '((cursor-bg . "#ffffef") (fringe-bg . "#2b2b2b")
+                     (internal-border-bg . "black") (line-number-bg . "#2b2b2b")
+                     (vertical-border-bg . "#2b2b2b")))
+                  (_ nil))))
+      (when face
+        (custom-set-faces
+         `(cursor ((t (:background ,(alist-get 'cursor-bg face)))))
+         `(fringe ((t (:background ,(alist-get 'fringe-bg face)))))
+         `(internal-border ((t (:background ,(alist-get 'internal-border-bg face)))))
+         `(line-number ((t (:background ,(alist-get 'line-number-bg face)))))
+         '(mode-line ((t (:box (:line-width 1))))))
+        (set-face-background 'vertical-border (alist-get 'vertical-border-bg face))
+        (set-face-foreground 'vertical-border (face-background 'vertical-border))))))
 (add-hook 'after-load-theme-hook #'id/theme-fix)
 
 ;;; Frame setup.
