@@ -16,6 +16,7 @@
 (load "~/.emacs.d/cfg/diff.el")
 (load "~/.emacs.d/cfg/edit.el")
 (load "~/.emacs.d/cfg/search.el")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load "~/.emacs.d/cfg/ui.el")
 (load "~/.emacs.d/cfg/lsp.el")
 (load "~/.emacs.d/cfg/buffer.el")
