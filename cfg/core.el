@@ -56,8 +56,11 @@
   (projectile-mode +1))
 
 ;;; Settings.
-(defvar id/cloud-directory (expand-file-name "~/Dropbox/emacs")
+(defvar id/cloud-directory "~/Dropbox/emacs"
   "ORG files system location.")
+(defvar id/org-directory (concat id/cloud-directory "/org")
+  "Personal org files location.")
+
 ;; Bookmarks.
 (setq bookmark-default-file (concat id/cloud-directory "/bookmarks"))
 ;; Save cursor position when leave a buffer.
