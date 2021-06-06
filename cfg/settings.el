@@ -5,6 +5,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-default-notes-file (concat id/org-directory "/todo.org"))
+ '(org-agenda-files (list org-default-notes-file
+                          (concat id/org-directory "/journal.org")))
  '(org-capture-templates
    `(("n" "[n]ew TODO item" entry
       (file org-default-notes-file)
