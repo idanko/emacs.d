@@ -27,6 +27,7 @@ Entered on %U
 #+ROAM_TAGS: " :unnarrowed t)))
  '(org-roam-db-location (concat id/cloud-directory "/org-roam.db"))
  '(org-roam-directory id/org-directory)
- '(org-roam-verbose nil))
+ '(org-roam-verbose nil)
+ '(spacemacs-theme-comment-bg nil))
 
 

@@ -19,6 +19,9 @@
 ;; Fullscreen alist: '(fullscreen . fullboth).
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+(use-package spacemacs-theme
+  :defer t)
+
 ;;; Frame setup.
 (defun id/make-frame-function (&optional frame)
   "Set font and default keyboard type.
@@ -26,7 +29,7 @@ FRAME is an optional and is required by `after-make-frame-functions'."
   (interactive)
   (when frame
     (select-frame frame))
-  (load-theme 'solarized-light t)
+  (load-theme 'spacemacs-light t)
   (when (display-graphic-p)
     ;; OSX specific configuration.
     (when (string-equal system-type "darwin")
