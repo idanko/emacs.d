@@ -41,3 +41,10 @@ The idea stolen from https://github.com/zaeph/.emacs.d/blob/4548c34d1965f4732d5d
                 `(lambda (c) (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
 
 (add-hook 'org-mode-hook #'id/org-fixup-electric-pairs)
+
+;;; `todo' buffer.
+(defun id/open-todo ()
+  "Visit todo file."
+  (interactive)
+  (find-file (concat id/org-directory "/todo.org")))
+(global-set-key (kbd "C-c b t") #'id/open-todo)

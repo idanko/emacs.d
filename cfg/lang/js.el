@@ -16,5 +16,13 @@
 
 (add-hook 'js-mode-hook #'id/js-mode-hook)
 
+;; js sandbox file.
+(defun id/open-sandbox-js ()
+  "Visit todo file."
+  (interactive)
+  (find-file "~/github.com/idanko/sandbox-js/app.js"))
+(global-set-key (kbd "C-c b j") #'id/open-sandbox-js)
+
+
 ;;; Typescript.
 (use-package typescript-mode)

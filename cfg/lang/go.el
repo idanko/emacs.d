@@ -22,3 +22,11 @@
     (setq-local gofmt-args (list "-local" (string-remove-suffix "/" pattern)))))
 
 (add-hook 'go-mode-hook #'id/go-mode-hook)
+
+;; go sandbox file.
+(defun id/open-sandbox-go ()
+  "Visit todo file."
+  (interactive)
+  (find-file "~/github.com/idanko/sandbox-go/main.go"))
+(global-set-key (kbd "C-c b g") #'id/open-sandbox-go)
+

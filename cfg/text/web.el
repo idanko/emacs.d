@@ -17,6 +17,14 @@
   (setq-default web-mode-markup-indent-offset id/web-indent-level)
   (setq-default web-mode-css-indent-offset id/web-indent-level))
 
+;; html sandbox file.
+(defun id/open-sandbox-html ()
+  "Visit todo file."
+  (interactive)
+  (find-file "~/github.com/idanko/sandbox-html/index.html"))
+(global-set-key (kbd "C-c b h") #'id/open-sandbox-html)
+
+
 ;;; Json mode.
 (use-package json-mode
   :after (flycheck)
