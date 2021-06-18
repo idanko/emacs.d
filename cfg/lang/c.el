@@ -12,4 +12,4 @@
 (add-hook 'c-mode-hook #'id/c-mode-hook)
 
 ;;; Cmake Mode.
-(use-package cmake-mode)
+(straight-use-package 'cmake-mode)

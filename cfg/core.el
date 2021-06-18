@@ -2,58 +2,48 @@
 
 ;;; Common Packages.
 ;; Hydra.
-(use-package hydra)
+(straight-use-package 'hydra)
 
 ;; Which Key.
-(use-package which-key
-  :config
-  (which-key-mode +1))
+(straight-use-package 'which-key)
+(which-key-mode +1)
 
 ;; Smex.
 ;; Sort and show the most recent commands at the top of counsel.
-(use-package smex)
+(straight-use-package 'smex)
 
 ;; Counsel.
-(use-package counsel
-  :config
-  (global-set-key (kbd "M-x") #'counsel-M-x)
-  (global-set-key [remap yank-pop] #'counsel-yank-pop) ;; Binds to M-y.
-  (global-set-key [remap describe-variable] #'counsel-describe-variable)
-  (global-set-key [remap describe-function] #'counsel-describe-function)
-  (global-set-key [remap find-file] #'counsel-find-file))
+(straight-use-package 'counsel)
+(global-set-key (kbd "M-x") #'counsel-M-x)
+(global-set-key [remap yank-pop] #'counsel-yank-pop) ;; Binds to M-y.
+(global-set-key [remap describe-variable] #'counsel-describe-variable)
+(global-set-key [remap describe-function] #'counsel-describe-function)
+(global-set-key [remap find-file] #'counsel-find-file)
 
 ;; Ivy.
-(use-package ivy
-  :init
-  (setq ivy-use-virtual-buffers t
+(setq ivy-use-virtual-buffers t
         enable-recursive-minibuffers t
         ivy-height 15
         ivy-initial-inputs-alist nil)
-  :config
-  (ivy-mode +1)
-  (global-set-key (kbd "C-c r") #'ivy-resume))
+(straight-use-package 'ivy)
+(ivy-mode +1)
+(global-set-key (kbd "C-c r") #'ivy-resume)
 
-(use-package ivy-posframe
-  :after (ivy)
-  :config
-  (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
-  (ivy-posframe-mode +1))
+(straight-use-package 'ivy-posframe)
+(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
+(ivy-posframe-mode +1)
 
 ;; Ivy Rich.
 ;; Show brief description on ivy menu.
-(use-package ivy-rich
-  :config
-  (ivy-rich-mode +1))
+(straight-use-package 'ivy-rich)
+(ivy-rich-mode +1)
 
 ;; Projectile.
-(use-package projectile
-  :after (ivy)
-  :init
-  (setq projectile-completion-system 'ivy)
-  :config
-  (define-key projectile-command-map "#" #'projectile-remove-known-project)
-  (global-set-key (kbd "C-c p") #'projectile-command-map)
-  (projectile-mode +1))
+(setq projectile-completion-system 'ivy)
+(straight-use-package 'projectile)
+(global-set-key (kbd "C-c p") #'projectile-command-map)
+(projectile-mode +1)
+(define-key projectile-command-map "#" #'projectile-remove-known-project)
 
 ;;; Settings.
 (defvar id/cloud-directory "~/Dropbox/emacs"

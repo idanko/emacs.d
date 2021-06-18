@@ -1,9 +1,8 @@
 ;;; ~/.emacs.d/cfg/lang/go.el -*- lexical-binding: t; -*-
 
 ;;; Go Mode.
-(use-package go-mode
-  :config
-  (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
+(straight-use-package 'go-mode)
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
 
 (defun id/go-mode-hook ()
   (setq-local gofmt-command "goimports"

@@ -29,5 +29,3 @@ Entered on %U
  '(org-roam-directory id/org-directory)
  '(org-roam-verbose nil)
  '(spacemacs-theme-comment-bg nil))
-
-

@@ -19,9 +19,6 @@
 ;; Fullscreen alist: '(fullscreen . fullboth).
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-(use-package spacemacs-theme
-  :defer t)
-
 ;;; Frame setup.
 (defun id/make-frame-function (&optional frame)
   "Set font and default keyboard type.
@@ -29,7 +26,7 @@ FRAME is an optional and is required by `after-make-frame-functions'."
   (interactive)
   (when frame
     (select-frame frame))
-  (load-theme 'spacemacs-light t)
+  (load-theme 'solarized-light t)
   (when (display-graphic-p)
     ;; OSX specific configuration.
     (when (string-equal system-type "darwin")
@@ -42,7 +39,7 @@ FRAME is an optional and is required by `after-make-frame-functions'."
     (when (string-equal system-type "gnu/linux")
       ;; Change font size.
       (set-face-attribute 'default nil
-                          :family "Iosevka" :height 110))))
+                          :family "Iosevka Term" :height 110))))
 
 ;; Emacs client frame.
 (add-hook 'after-make-frame-functions #'id/make-frame-function)
@@ -50,6 +47,5 @@ FRAME is an optional and is required by `after-make-frame-functions'."
 (add-hook 'after-init-hook #'id/make-frame-function)
 
 ;;; hl-todo.
-(use-package hl-todo
-  :config
-  (global-hl-todo-mode +1))
+(straight-use-package 'hl-todo)
+(global-hl-todo-mode +1)

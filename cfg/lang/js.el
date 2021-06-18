@@ -25,4 +25,4 @@
 
 
 ;;; Typescript.
-(use-package typescript-mode)
+(straight-use-package 'typescript-mode)

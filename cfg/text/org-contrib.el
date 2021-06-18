@@ -1,17 +1,18 @@
 ;;; ~/.emacs.d/cfg/text/org-contrib.el -*- lexical-binding: t; -*-
 
 ;;; Org Roam.
-(use-package org-roam
-  :hook (after-init . org-roam-mode)
-  :bind (:map org-roam-mode-map
-              (("C-c n r" . org-roam)
-               ("C-c n \\" . org-roam-db-build-cache)
-               ("C-c n f" . org-roam-find-file)
-               ("C-c n g" . org-roam-graph-show))))
+(straight-use-package 'org-roam)
+
+(defun id/org-roam-hook ()
+  (org-roam-mode +1)
+  (define-key org-roam-mode-map (kbd "C-c n r") #'org-roam)
+  (define-key org-roam-mode-map (kbd "C-c n \\") #'org-roam-db-build-cache)
+  (define-key org-roam-mode-map (kbd "C-c n f") #'org-roam-find-file)
+  (define-key org-roam-mode-map (kbd "C-c n g") #'org-roam-graph-show))
+(add-hook 'after-init-hook #'id/org-roam-hook)
+
 
 ;;; Org Drill (Flashcard Org Extension).
-(use-package org-drill
-  :after (org)
-  :config
-  :bind (:map org-mode-map
-              (("C-c d" . org-drill))))
+(straight-use-package 'org-drill)
+(with-eval-after-load 'org
+  (define-key org-mode-map (kbd "C-c d") #'org-drill))

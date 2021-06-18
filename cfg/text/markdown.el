@@ -1,11 +1,10 @@
 ;;; ~/.emacs.d/cfg/text/markdown.el -*- lexical-binding: t; -*-
 
 ;;; Markdown Mode.
-(use-package markdown-mode
-  :config
-  ;; Use major mode native style.
-  (setq markdown-fontify-code-blocks-natively t)
-  (add-hook 'markdown-mode-hook #'id/markdown-mode-hook))
+(straight-use-package 'markdown-mode)
+;; Use major mode native style.
+(setq markdown-fontify-code-blocks-natively t)
+(add-hook 'markdown-mode-hook #'id/markdown-mode-hook)
 
 ;;; Settings.
 (defun id/markdown-mode-hook ()
