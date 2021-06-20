@@ -19,6 +19,8 @@
 ;; Fullscreen alist: '(fullscreen . fullboth).
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+(straight-use-package 'zenburn-theme)
+
 ;;; Frame setup.
 (defun id/make-frame-function (&optional frame)
   "Set font and default keyboard type.
@@ -26,7 +28,7 @@ FRAME is an optional and is required by `after-make-frame-functions'."
   (interactive)
   (when frame
     (select-frame frame))
-  (load-theme 'solarized-light t)
+  (load-theme 'zenburn t)
   (when (display-graphic-p)
     ;; OSX specific configuration.
     (when (string-equal system-type "darwin")
