@@ -19,5 +19,6 @@
 
 ;;; Elisp.
 (defun id/emacs-lisp-mode-hook ()
-  (id/shared-lisp-mode-hook))
+  (id/shared-lisp-mode-hook)
+  (define-key emacs-lisp-mode-map (kbd "C-c C-c") #'eval-defun))
 (add-hook 'emacs-lisp-mode-hook #'id/emacs-lisp-mode-hook)
