@@ -1,0 +1,28 @@
+diff --git a/zenburn-theme.el b/zenburn-theme.el
+index e2720d7..590692e 100644
+--- a/zenburn-theme.el
++++ b/zenburn-theme.el
+@@ -857,9 +857,8 @@ Also bind `class' to ((class color) (min-colors 89))."
+    `(irfc-table-item-face ((t (:foreground ,zenburn-green+3))))
+    `(irfc-title-face ((t (:foreground ,zenburn-yellow
+                                       :underline t :weight bold))))
+-;;;;; ivy
+-   `(ivy-confirm-face ((t (:foreground ,zenburn-green :background ,zenburn-bg))))
+-   `(ivy-current-match ((t (:foreground ,zenburn-yellow :weight bold :underline t))))
++   `(ivy-confirm-face ((t (:inherit company-tooltip-search))))
++   `(ivy-current-match ((t (:inherit company-tooltip-selection))))
+    `(ivy-cursor ((t (:foreground ,zenburn-bg :background ,zenburn-fg))))
+    `(ivy-match-required-face ((t (:foreground ,zenburn-red :background ,zenburn-bg))))
+    `(ivy-minibuffer-match-face-1 ((t (:background ,zenburn-bg+1))))
+@@ -873,6 +872,11 @@ Also bind `class' to ((class color) (min-colors 89))."
+    `(ido-only-match ((t (:foreground ,zenburn-orange :weight bold))))
+    `(ido-subdir ((t (:foreground ,zenburn-yellow))))
+    `(ido-indicator ((t (:foreground ,zenburn-yellow :background ,zenburn-red-4))))
++;;;;; ivy-posframe
++   `(ivy-posframe ((t (:inherit highlight :background ,zenburn-bg+1))))
++   `(ivy-posframe-border ((t (:inherit internal-border))))
++;;;;; company-posframe
++   `(company-posframe-quickhelp ((t (:background ,zenburn-bg+1))))
+ ;;;;; iedit-mode
+    `(iedit-occurrence ((t (:background ,zenburn-bg+2 :weight bold))))
+ ;;;;; jabber-mode
