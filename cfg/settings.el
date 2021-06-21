@@ -28,4 +28,4 @@ Entered on %U
  '(org-roam-db-location (concat id/cloud-directory "/org-roam.db"))
  '(org-roam-directory id/org-directory)
  '(org-roam-verbose nil)
- '(spacemacs-theme-comment-bg nil))
+ '(company-posframe-quickhelp-show-header nil))

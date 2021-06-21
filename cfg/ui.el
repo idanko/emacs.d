@@ -19,7 +19,9 @@
 ;; Fullscreen alist: '(fullscreen . fullboth).
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-(straight-use-package 'doom-themes)
+(straight-use-package 'zenburn-theme)
+(setq zenburn-scale-org-headlines t
+      zenburn-scale-outline-headlines t)
 
 ;;; Frame setup.
 (defun id/make-frame-function (&optional frame)
@@ -28,7 +30,7 @@ FRAME is an optional and is required by `after-make-frame-functions'."
   (interactive)
   (when frame
     (select-frame frame))
-  (load-theme 'doom-zenburn t)
+  (load-theme 'zenburn t)
   (when (display-graphic-p)
     ;; OSX specific configuration.
     (when (string-equal system-type "darwin")
