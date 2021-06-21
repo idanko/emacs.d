@@ -11,7 +11,8 @@
           (_ nil))
     ;; Make sure that lsp is installed:
     ;; sudo npm install -g typescript-language-server
-    (eglot-ensure))
+    (eglot-ensure)
+    (flycheck-mode +1))
   (define-key js-mode-map [(meta ?.)] #'xref-find-definitions))
 
 (add-hook 'js-mode-hook #'id/js-mode-hook)
