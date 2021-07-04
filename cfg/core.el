@@ -29,6 +29,11 @@
 (straight-use-package 'ivy-rich)
 (ivy-rich-mode +1)
 
+;; Ivy Posframe.
+(straight-use-package 'ivy-posframe)
+(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
+(ivy-posframe-mode +1)
+
 ;;; Settings.
 (defvar id/cloud-directory (expand-file-name "~/Dropbox/emacs")
   "ORG files system location.")

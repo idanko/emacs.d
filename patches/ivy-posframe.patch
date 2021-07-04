@@ -1,0 +1,13 @@
+diff --git a/ivy-posframe.el b/ivy-posframe.el
+index 030662f..586cc1c 100644
+--- a/ivy-posframe.el
++++ b/ivy-posframe.el
+@@ -303,7 +303,7 @@ This variable is useful for `ivy-posframe-read-action' .")
+                    (let ((height (+ ivy-height 1)))
+                      (min height (or ivy-posframe-height height))))
+    :min-width (or ivy-posframe-min-width
+-                  (let ((width (round (* (frame-width) 0.62))))
++                  (let ((width (round (* (frame-width) 0.87))))
+                     (min width (or ivy-posframe-width width))))))
+ 
+ (defun ivy-posframe-display (str)
