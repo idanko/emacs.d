@@ -6,6 +6,7 @@
 (evil-mode +1)
 
 (straight-use-package 'undo-tree)
+(global-undo-tree-mode +1)
 (evil-set-undo-system 'undo-tree)
 
 ;; Fix an issue with underscore.
