@@ -12,9 +12,6 @@ all modes."
 
 ;;; lsp (eglot).
 (straight-use-package 'eglot)
-;; workaround of the error on `eglot' cmd
-(defun project-root (project)
-  (car (project-roots project)))
 
 ;;; Company.
 (straight-use-package 'company)
