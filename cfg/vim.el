@@ -39,22 +39,22 @@
 (setq-default evil-escape-delay 0.3)
 
 ;;; Goodies.
-;; Collection.
+;; collection.
 (straight-use-package 'evil-collection)
-;; TODO: consider to use el-patch.
 (require 'evil-collection)
 (setq evil-collection-mode-list (remove 'go-mode evil-collection-mode-list))
+(setq evil-collection-mode-list (remove 'vterm evil-collection-mode-list))
 (evil-collection-init)
 
 ;; vim-surround.
 (straight-use-package 'evil-surround)
 (global-evil-surround-mode +1)
 
+;; vim-commentary.
+(straight-use-package 'evil-commentary)
+(evil-commentary-mode +1)
+
 ;; evil-terminal-cursor-changer.
 (unless (display-graphic-p)
   (straight-use-package 'evil-terminal-cursor-changer)
   (evil-terminal-cursor-changer-activate))
-
-;; tmux-pane.
-(straight-use-package 'tmux-pane)
-(tmux-pane-mode +1)
