@@ -45,3 +45,10 @@
   (evil-define-key 'normal 'emacs-lisp-mode-map (kbd "<localleader> e e") #'eval-last-sexp)
   (evil-define-key 'normal 'emacs-lisp-mode-map (kbd "<localleader> e b") #'eval-buffer))
 (add-hook 'emacs-lisp-mode-hook #'id/emacs-lisp-mode-hook)
+
+;;; Racket.
+(straight-use-package 'racket-mode)
+(defun id/racket-mode-hook ()
+  (id/shared-lisp-mode-hook)
+  (paredit-mode +1))
+(add-hook 'racket-mode-hook #'id/racket-mode-hook)
