@@ -1,9 +1,12 @@
 ;;; ~/.emacs.d/cfg/vim.el -*- lexical-binding: t; -*-
 
-;;; Vim keybinding
+;;; VIM core.
 (setq evil-want-keybinding nil) ;; required by evil-collection
 (straight-use-package 'evil)
 (evil-mode +1)
+
+(straight-use-package 'undo-tree)
+(evil-set-undo-system 'undo-tree)
 
 ;; Fix an issue with underscore.
 ;; https://emacs.stackexchange.com/questions/9583/how-to-treat-underscore-as-part-of-the-word#answer-20717
