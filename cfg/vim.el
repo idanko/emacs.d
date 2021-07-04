@@ -6,8 +6,11 @@
 (evil-mode +1)
 
 (straight-use-package 'undo-tree)
-(global-undo-tree-mode +1)
 (evil-set-undo-system 'undo-tree)
+(global-undo-tree-mode +1)
+;; fix `Undo-tree mode not enabled in buffer` error message
+;; (https://github.com/syl20bnr/spacemacs/issues/14064#:~:text=global%2Dundo%2Dtree%2Dmode%20will%20not%20enable%20undo%2D,place%2C%20and%20not%20overriding%20them)
+(with-eval-after-load 'undo-tree (defun undo-tree-overridden-undo-bindings-p () nil))
 
 ;; Fix an issue with underscore.
 ;; https://emacs.stackexchange.com/questions/9583/how-to-treat-underscore-as-part-of-the-word#answer-20717
