@@ -4,6 +4,11 @@
 ;;; Editing.
 (straight-use-package 'evil-paredit)
 
+(defun id/paredit-mode-hook ()
+  ;;; X is mapped to kill-this-buffer globally.
+  (evil-define-key 'normal evil-paredit-mode-map "X" nil))
+(add-hook 'evil-paredit-mode-hook #'id/paredit-mode-hook)
+
 (defun id/shared-lisp-mode-hook ()
   (evil-paredit-mode +1)
   (setq-local fill-column 80))
