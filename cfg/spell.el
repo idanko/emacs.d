@@ -15,7 +15,7 @@
         (flyspell-mode +1))
       (flyspell-buffer))))
 
-(evil-global-set-key 'normal (kbd "<localleader> t s") #'id/flyspell-toggle)
+(evil-global-set-key 'normal (kbd "<leader> t s") #'id/flyspell-toggle)
 
 ;;; Use common interface for spell correction.
 (straight-use-package 'flyspell-correct)

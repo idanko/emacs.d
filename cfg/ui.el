@@ -26,22 +26,7 @@
   "Run `after-load-theme-hook'."
   (run-hooks 'after-load-theme-hook))
 
-(defun id/theme-fix ()
-  (custom-set-faces
-   '(fringe ((t (:background "#f0e9d7"))))
-   '(line-number ((t (:background "#f0e9d7"))))
-   '(line-number-current-line ((t (:background "#f0e9d7"))))
-   '(lazy-highlight ((t (:background "#b58900"))))
-   '(company-tooltip ((t (:foreground "#96A7A9" :background "#f0e9d7"))))
-   '(scroll-bar ((t (:foreground "#556b72" :foreground "#556b72"))))
-   '(company-scrollbar-fg ((t (:background "#556b72"))))
-   '(company-scrollbar-bg ((t (:background "#f0e9d7"))))
-   '(company-tooltip-common ((t (:foreground "#556b72" :weight bold))))
-   '(company-tooltip-selection ((t (:foreground "#556b72" :weight bold :background "#96A7A9"))))
-   '(company-tooltip-common-selection ((t (:foreground "#556b72" :weight bold)))))
-  ;; https://www.reddit.com/r/emacs/comments/3u0d0u/how_do_i_make_the_vertical_window_divider_more/
-  (set-face-background 'vertical-border "#f0e9d7")
-  (set-face-foreground 'vertical-border (face-background 'vertical-border)))
+(defun id/theme-fix ())
 
 (add-hook 'after-load-theme-hook #'id/theme-fix)
 
@@ -54,7 +39,7 @@ FRAME is an optional and is required by `after-make-frame-functions'."
   (interactive)
   (when frame
     (select-frame frame))
-  (load-theme 'doom-solarized-light t)
+  (load-theme 'doom-one t)
   (when (display-graphic-p)
     ;; OSX specific configuration.
     (when (string-equal system-type "darwin")

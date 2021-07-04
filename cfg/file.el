@@ -2,8 +2,8 @@
 
 ;;; Counsel.
 (with-eval-after-load 'counsel
-  (evil-global-set-key 'normal (kbd "<localleader> f c") #'counsel-find-file)
-  (evil-global-set-key 'normal (kbd "<localleader> f r") #'counsel-recentf))
+  (evil-global-set-key 'normal (kbd "<leader> f c") #'counsel-find-file)
+  (evil-global-set-key 'normal (kbd "<leader> f r") #'counsel-recentf))
 
 ;;; Scratchpad buffer.
 (defun id/open-scratchpad ()
@@ -11,7 +11,7 @@
   (interactive)
   (find-file (concat id/cloud-directory "/scratchpad.txt")))
 
-(evil-global-set-key 'normal (kbd "<localleader> f s") #'id/open-scratchpad)
+(evil-global-set-key 'normal (kbd "<leader> f s") #'id/open-scratchpad)
 
 ;;; Access buffer.
 (defun id/open-access ()
@@ -19,4 +19,4 @@
   (interactive)
   (find-file (concat id/cloud-directory "/access.gpg")))
 
-(evil-global-set-key 'normal (kbd "<localleader> f a") #'id/open-access)
+(evil-global-set-key 'normal (kbd "<leader> f a") #'id/open-access)

@@ -7,4 +7,4 @@
 
 (define-key projectile-command-map "#" #'projectile-remove-known-project)
 (evil-global-set-key 'normal (kbd "<leader> p") #'projectile-command-map)
-(evil-global-set-key 'normal (kbd "<localleader> f f") #'projectile-find-file)
+(evil-global-set-key 'normal (kbd "C-t") #'projectile-find-file)

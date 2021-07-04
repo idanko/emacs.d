@@ -102,6 +102,6 @@ OPT required argument of the origin symbol."
 
 ;;; Default keybindings.
 ;; Toggle.
-(evil-global-set-key 'normal (kbd "<localleader> t t") #'toggle-truncate-lines)
-(evil-global-set-key 'normal (kbd "<localleader> t n") #'display-line-numbers-mode)
-(evil-global-set-key 'normal (kbd "<localleader> t w") #'whitespace-mode)
+(evil-global-set-key 'normal (kbd "<leader> t t") #'toggle-truncate-lines)
+(evil-global-set-key 'normal (kbd "<leader> t n") #'display-line-numbers-mode)
+(evil-global-set-key 'normal (kbd "<leader> t w") #'whitespace-mode)
