@@ -11,6 +11,10 @@
 ;; stop using vim keys
 (evil-set-initial-state 'vterm-mode 'emacs)
 
+(defun id/vterm-mode-hook ()
+  (setq-local evil-escape-inhibit t))
+(add-hook 'vterm-mode-hook #'id/vterm-mode-hook)
+
 ;; tmux-pane.
 (straight-use-package 'tmux-pane)
 (tmux-pane-mode +1)
