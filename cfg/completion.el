@@ -34,9 +34,14 @@ all modes."
   (setq company-backends
         (mapcar #'id/company-backend-with-yas company-backends))
 
-  (define-key company-active-map (kbd "C-n") #'company-select-next)
-  (define-key company-active-map (kbd "C-p") #'company-select-previous))
+  ;; Don't use vim's C-n, C-p bindings.
+  (define-key evil-insert-state-map (kbd "C-n") nil)
+  (define-key evil-insert-state-map (kbd "C-p") nil))
 
+;; company-posframe.
+(straight-use-package 'company-posframe)
+(company-posframe-mode +1)
+(setq company-posframe-quickhelp-show-header nil)
 
 ;;; Emmet mode.
 (straight-use-package 'emmet-mode)
