@@ -11,7 +11,10 @@
 ;; Show in full screen mode.
 (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
 ;; Auto check spelling.
-(add-hook 'git-commit-setup-hook #'flyspell-mode)
+(defun id/git-commit-setup-hook ()
+  (flyspell-mode +1)
+  (evil-insert-state))
+(add-hook 'git-commit-setup-hook #'id/git-commit-setup-hook)
 
 (evil-global-set-key 'normal (kbd "<leader> g g") #'magit-status)
 (evil-global-set-key 'normal (kbd "<leader> g b") #'magit-blame)
