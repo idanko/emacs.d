@@ -7,4 +7,4 @@
 
 ;;; VTerm.
 (straight-use-package 'vterm)
-(evil-global-set-key 'normal (kbd "<leader> t v") #'vterm)
+(evil-global-set-key 'normal (kbd "<leader> t x") #'vterm)
