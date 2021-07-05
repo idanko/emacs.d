@@ -44,6 +44,7 @@
 (require 'evil-collection)
 (setq evil-collection-mode-list (remove 'go-mode evil-collection-mode-list))
 (setq evil-collection-mode-list (remove 'vterm evil-collection-mode-list))
+(setq evil-collection-mode-list (remove 'eglot evil-collection-mode-list))
 (evil-collection-init)
 
 ;; vim-surround.
