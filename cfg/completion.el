@@ -12,6 +12,8 @@ all modes."
 
 ;;; lsp (eglot).
 (straight-use-package 'eglot)
+;; better el-doc popoup
+(setq eldoc-echo-area-use-multiline-p nil)
 
 ;;; Company.
 (straight-use-package 'company)
