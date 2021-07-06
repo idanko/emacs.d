@@ -27,6 +27,7 @@
   (when (and (derived-mode-p 'prog-mode)
              (pcase major-mode
                ('elm-mode nil)
+               ('python-mode nil)
                (_ t)))
     (save-excursion
       (mark-paragraph)
