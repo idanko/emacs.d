@@ -19,6 +19,6 @@
 (straight-use-package 'tmux-pane)
 (tmux-pane-mode +1)
 ;; disable some unused keys to avoid collison.
-(define-key tmux-pane--override-keymap (kbd "C-k") nil)
-(define-key tmux-pane--override-keymap (kbd "C-h") nil)
 (define-key tmux-pane--override-keymap (kbd "C-\\") nil)
+(define-key tmux-pane--override-keymap (kbd "C-k") nil)
+(define-key tmux-pane--override-keymap (kbd "C-j") nil)
