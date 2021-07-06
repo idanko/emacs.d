@@ -16,3 +16,13 @@
 (straight-use-package 'org-drill)
 (with-eval-after-load 'org
   (define-key org-mode-map (kbd "C-c d") #'org-drill))
+
+
+;;; org-bullets.
+(straight-use-package 'org-bullets)
+
+
+;;; Hooks.
+(defun id/org-mode-contrib-hook ()
+  (org-bullets-mode +1))
+(add-hook 'org-mode-hook #'id/org-mode-contrib-hook)
