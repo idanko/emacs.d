@@ -28,3 +28,31 @@
     (require 'org-drill))
   (evil-define-key 'normal org-mode-map (kbd "<localleader> c d") #'org-drill))
 (add-hook 'org-mode-hook #'id/org-mode-hook-1)
+
+;;; Org Toggle Fontifications.
+(defun id/org-toggle-fontifications ()
+  "Toggle emphasis markers and the link display.
+Toggle fontifications.
+The idea stolen from https://github.com/zaeph/.emacs.d/blob/4548c34d1965f4732d5df1f56134dc36b58f6577/init.el#L3037-L3069"
+  (interactive)
+  ;; Toggle markers.
+  (setq-local org-hide-emphasis-markers
+              (not org-hide-emphasis-markers))
+  ;; Toggle links.
+  (if org-link-descriptive
+      (remove-from-invisibility-spec '(org-link))
+    (add-to-invisibility-spec '(org-link)))
+  (setq-local org-link-descriptive
+              (not org-link-descriptive))
+  ;; Apply changes.
+  (font-lock-fontify-buffer))
+
+;; Org Bullets
+(straight-use-package 'org-bullets)
+
+;;; Hooks.
+(defun id/org-mode-contrib-hook ()
+  (org-bullets-mode +1)
+  (evil-define-key 'normal org-mode-map (kbd "<localleader> t f") #'id/org-toggle-fontifications)
+  (evil-define-key 'normal org-roam-mode-map (kbd "<localleader> r i") #'org-roam-insert-immediate))
+(add-hook 'org-mode-hook #'id/org-mode-contrib-hook)

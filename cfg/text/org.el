@@ -25,26 +25,9 @@
 (defun id/org-journal () (interactive) (org-capture nil "j"))
 (evil-global-set-key 'normal (kbd "<leader> n j") #'id/org-journal)
 
-(defun id/org-toggle-fontifications ()
-  "Toggle emphasis markers and the link display.
-Toggle fontifications.
-The idea stolen from https://github.com/zaeph/.emacs.d/blob/4548c34d1965f4732d5df1f56134dc36b58f6577/init.el#L3037-L3069"
-  (interactive)
-  ;; Toggle markers.
-  (setq-local org-hide-emphasis-markers
-              (not org-hide-emphasis-markers))
-  ;; Toggle links.
-  (if org-link-descriptive
-      (remove-from-invisibility-spec '(org-link))
-    (add-to-invisibility-spec '(org-link)))
-  (setq-local org-link-descriptive
-              (not org-link-descriptive))
-  ;; Apply changes.
-  (font-lock-fontify-buffer))
-
 (defun id/org-mode-hook ()
   (setq-local fill-column 80)
-  (evil-define-key 'normal org-mode-map (kbd "<localleader> c *") #'id/org-toggle-fontifications))
+  (evil-define-key 'normal org-mode-map (kbd "RET") #'org-open-at-point))
 (add-hook 'org-mode-hook #'id/org-mode-hook)
 
 ;;; Electric Pair Settings.
