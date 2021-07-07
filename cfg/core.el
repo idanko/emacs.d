@@ -123,17 +123,6 @@ OPT required argument of the origin symbol."
 
 ;;; Default keybindings.
 ;; Toggle.
-(global-set-key (kbd "C-c t t") #'toggle-truncate-lines)
+(global-set-key (kbd "C-c t l") #'toggle-truncate-lines)
 (global-set-key (kbd "C-c t w") #'whitespace-mode)
-(global-set-key (kbd "C-c t n") #'global-display-line-numbers-mode)
-
-;; Ansi term.
-(defun id/swtich-to-ansi-term ()
-  (interactive)
-  (if (seq-filter (lambda (buf)
-                    (string-equal (buffer-name buf) "*ansi-term*"))
-                  (buffer-list))
-      (switch-to-buffer "*ansi-term*")
-    (call-interactively #'ansi-term)))
-
-(global-set-key (kbd "C-c t a") #'id/swtich-to-ansi-term)
+(global-set-key (kbd "C-c t n") #'display-line-numbers-mode)
