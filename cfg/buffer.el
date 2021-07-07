@@ -3,6 +3,7 @@
 ;;; Key bindings.
 (global-set-key (kbd "C-c b i") #'revert-buffer) ; (invigorate).
 (global-set-key (kbd "C-c b r") #'counsel-recentf)
+(global-set-key [remap kill-buffer] #'kill-this-buffer)
 
 ;;; Scratchpad buffer.
 (defun id/open-scratchpad ()
