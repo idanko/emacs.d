@@ -7,12 +7,16 @@
 ;;; Auto formatting.
 (defun id/auto-format ()
   (interactive)
-  (when (cond
-         ((derived-mode-p 'prog-mode) t)
-         (t nil))
+  (when (and (derived-mode-p 'prog-mode)
+             (pcase major-mode
+               ('elm-mode nil)
+               ('python-mode nil)
+               (_ t)))
     (save-excursion
       (mark-paragraph)
       (call-interactively 'indent-region))))
 
 (add-hook 'before-save-hook #'id/auto-format)
 
+;;; Line number mode.
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)

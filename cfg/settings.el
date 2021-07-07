@@ -28,4 +28,10 @@ Entered on %U
  '(org-roam-db-location (concat id/cloud-directory "/org-roam.db"))
  '(org-roam-directory id/org-directory)
  '(org-roam-verbose nil)
- '(company-posframe-quickhelp-show-header nil))
+ '(company-posframe-quickhelp-show-header nil)
+ '(eldoc-echo-area-use-multiline-p nil)  ;; better el-doc popoup
+ '(git-gutter:modified-sign "▌")
+ '(git-gutter:added-sign "▌")
+ '(git-gutter:deleted-sign "▌")
+ '(git-gutter:hide-gutter t))
+

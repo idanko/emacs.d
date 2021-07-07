@@ -20,3 +20,16 @@
 (straight-use-package 'git-link)
 ;; Copy path to the clipboard.
 (global-set-key (kbd "C-c g u") #'git-link)
+
+;; Git gutter.
+(straight-use-package 'git-gutter)
+
+(global-git-gutter-mode +1)
+;; update when focused
+(add-to-list 'git-gutter:update-commands 'other-window)
+(add-to-list 'git-gutter:update-hooks 'focus-in-hook)
+
+;; mapping.
+(with-eval-after-load 'git-gutter
+  (global-set-key (kbd "C-c >") #'git-gutter:next-hunk)
+  (global-set-key (kbd "C-c <") #'git-gutter:previous-hunk))

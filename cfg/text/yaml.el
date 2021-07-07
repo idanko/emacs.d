@@ -11,4 +11,4 @@
 ;; OSX: brew install yamllint
 ;; Debian based: sudo apt install yamllint
 (add-hook 'yaml-mode-hook #'flycheck-mode)
-
+(add-hook 'yaml-mode-hook #'display-line-numbers-mode)

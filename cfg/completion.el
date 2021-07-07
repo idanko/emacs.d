@@ -29,9 +29,6 @@ all modes."
 (setq company-backends
       (mapcar #'id/company-backend-with-yas company-backends))
 
-(define-key company-active-map (kbd "C-n") #'company-select-next)
-(define-key company-active-map (kbd "C-p") #'company-select-previous)
-
 (straight-use-package 'company-posframe)
 (company-posframe-mode +1)
 
